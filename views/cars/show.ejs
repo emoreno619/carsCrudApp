@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+
+<p>
+		<%= car.year + " " + car.make + " " + car.model %>
+</p>
+<p>
+	<img src="<%= car.photo %>" alt="">
+</p>
+
+<p>
+	<a href="/cars/<%= car.id %>/edit">Edit this car</a>
+	<a href="/cars">Home</a>
+</p>
+
+<% include ../partials/footer %>

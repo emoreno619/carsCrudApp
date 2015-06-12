@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+<h1>Here are the results:</h1>
+<div>
+	<thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Year</th>
+    <th>ISBN</th>
+    <th>Buy</th>
+  </tr>
+</thead>
+<tbody>
+
+<% result.forEach(function(book){ %>
+	<% console.log(book) %>
+  <tr>
+  	<form action="/searchresults" method="POST">
+
+		<td><label for="title">	<%= book.title %></label></td>
+	    <input type="hidden" value="<%= book.title %>" name="book[title]" readonly=true id="title">
+	    <td><label for="authors">	<%= book.authors %></label></td>
+	    <input type="hidden" value="<%= book.authors %>" name="book[authors]" readonly=true id="authors">
+	    <td><label for="date">	<%= book.date %></label></td>
+	    <input type="hidden" value="<%= book.date %>" name="book[date]" readonly=true id="date">
+	    <td><label for="rating">	<%= book.rating %></label></td>
+	    <input type="hidden" value="<%= book.rating %>" name="book[rating]" readonly=true id="rating">
+	    <td><label for="isbn">	<%= book.isbn %></label></td>
+	    <input type="hidden" value="<%= book.isbn %>" name="book[isbn]" readonly=true id="isbn">
+	    
+	    <input type="submit" value="<%= book.price %>"></td>
+	    <td><img src="<%= book.pic %>"></td>
+    </form>
+  </tr>
+<% })%>
+</tbody>
+</table>
+
+<div>
+	<a href="/">Home</a>
+</div>
+<% include ../partials/footer %>

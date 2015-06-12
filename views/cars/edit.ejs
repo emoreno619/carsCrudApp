@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<h1> Edit a Car -	<%= car.year + " " + car.make + " " + car.model %></h1>
+
+<form action="/cars/<%= car.id %>?_method=put" method="POST">
+	<label for="type">Type:</label>
+	<input type="text" name="car[type]" id="type" value="<%= car.type %>">
+	<label for="year">Year:</label>
+	<input type="text" name="car[year]" id="year" value="<%= car.year %>">
+	<label for="make">Make:</label>
+	<input type="text" name="car[make]" id="make" value="<%= car.make %>">
+	<label for="model">Model:</label>
+	<input type="text" name="car[model]" id="model" value="<%= car.model %>">
+	<label for="photo">Link to Photo:</label>
+	<input type="text" name="car[photo]" id="photo" value="<%= car.photo %>">
+	<input type="submit" value="Edit this car">
+</form>
+<a href="/cars">Home</a>
+<% include ../partials/footer %>

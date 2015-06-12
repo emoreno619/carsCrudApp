@@ -1,0 +1,5 @@
+var mongoose = require("mongoose")
+mongoose.connect("mongodb://localhost/car_app")
+mongoose.set("debug", true)
+module.exports.Car = require("./car")
+module.exports.Book = require("./book")

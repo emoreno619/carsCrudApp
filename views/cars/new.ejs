@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<h1> Add a Car</h1>
+
+<form action="/cars" method="POST">
+	<label for="type">Type:</label>
+	<input type="text" name="car[type]" id="type">
+	<label for="year">Year:</label>
+	<input type="text" name="car[year]" id="year">
+	<label for="make">Make:</label>
+	<input type="text" name="car[make]" id="make">
+	<label for="model">Model:</label>
+	<input type="text" name="car[model]" id="model">
+	<label for="photo">Link to Photo:</label>
+	<input type="text" name="car[photo]" id="photo">
+	<input type="submit" value="Add this car">
+</form>
+
+<% include ../partials/footer %>

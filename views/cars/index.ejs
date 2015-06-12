@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+<div>
+	<label for="search">Search for a book:</label>
+	<form action="/searchresults" method="GET">
+		<input type="text" id="search" name="search">
+		<input type="submit" value="Search!">
+	</form>
+</div>
+<h1>Here are all of the cars:</h1>
+<div>
+	<% console.log(cars); cars.forEach(function(car){ %>
+	<p> <a href="/cars/<%= car.id %>"</a> <%= car.year + " " + car.make + " " + car.model %>
+	</p>
+	<p>
+		<img src="<%=car.photo%>" alt="">
+	</p>
+	<% }) %>
+</div>
+
+<div>
+	<a href="/cars/new">Add a car</a>
+</div>
+
+<h1>Here are all of the books:</h1>
+<div>
+	<% console.log(books); books.forEach(function(book){ %>
+	<p> <a href="/books/<%= book.id %>"</a> <%= book.title + " " + book.authors + " " + book.date %>
+	</p>
+	<p>
+		<img src="<%=book.photo%>" alt="">
+	</p>
+	<% }) %>
+</div>
+<% include ../partials/footer %>
