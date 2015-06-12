@@ -65,6 +65,7 @@ app.get('/searchresults', function(req,res){
 				console.log(bookData.items[i].volumeInfo.authors[0])
 				aBook.date = bookData.items[i].volumeInfo.publishedDate
 				aBook.rating = bookData.items[i].volumeInfo.averageRating
+				if (bookData.items[i].volumeInfo.imageLinks)
 				aBook.pic = bookData.items[i].volumeInfo.imageLinks.thumbnail
 				if ((bookData.items[i].saleInfo.saleability != "FREE" && bookData.items[i].saleInfo.saleability != "NOT_FOR_SALE") || bookData.items[i].saleInfo.retailPrice)
 					aBook.price = " Price: " + bookData.items[i].saleInfo.retailPrice.amount
