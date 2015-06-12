@@ -50,7 +50,7 @@ app.post('/cars', function(req,res){
 })
 
 app.get('/searchresults', function(req,res){
-	var url = "https://www.googleapis.com/books/v1/volumes?key=AIzaSyD9DE6LCDe8mA3MdLAqyY4ViHZaIrlcbR4&q=" + encodeURIComponent(req.query.search)
+	var url = "https://www.googleapis.com/books/v1/volumes?q=" + encodeURIComponent(req.query.search)
 	
 	var result = []
 	request.get(url, function(error, response, body){
